@@ -16,7 +16,10 @@ class connectDB:
     # 사용자 이름으로 조회 후 잠금 해제 시도
     def whoAreYou(self, openName, fingerPrint):
         # sql 문 잘 모르니까 선생님께 꼭 여쭤보고 완성할 것
-        sql = "select * from memberDB where name = '{0}'".format(openName)
+        sql = "select * from memberDB where fingerPrint = '{0}'".format(openName)
         self.cur.execute(sql)
         result = self.cur.fetchall()
-        return result
+        if result is not None:
+            return True
+        else:
+            return False
