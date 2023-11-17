@@ -8,7 +8,7 @@ class connectDB:
 
     # 새로운 사용자 ( 지문 정보 ) 등록
     def helloNew(self, name, fingerPrint):
-        sql = "insert into memberDB(name, fingerPrint) values('{0}', '{1}')".format(name, fingerPrint)
+        sql = "insert into memberDB(userName, userFingerPrint) values('{0}', '{1}')".format(name, fingerPrint)
         self.cur.execute(sql)
         self.db.commit()
         return jsonify({'msg':'등록 완료!'})
