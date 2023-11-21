@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 buzzerPin = 16
-melody = [262, 330, 392, 523]
+melody = [262, 330, 392, 527]
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(buzzerPin, GPIO.OUT)
@@ -17,14 +17,14 @@ class Buzzer:
         self.pwm.start(50.0)
         for i in range(4):
             self.pwm.ChangeFrequency(melody[i])
-            time.sleep(1.0)
+            time.sleep(0.3)
         self.pwm.stop()
 
     def Emergency(self):
         self.pwm.start(50.0)
         for i in range(5):
             self.pwm.ChangeFrequency(349)
-            time.sleep(2.0)
+            time.sleep(1.0)
         self.pwm.stop()
 
 GPIO.cleanup()
