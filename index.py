@@ -14,7 +14,7 @@ def signUpInfor():
     data = request.get_json()
     name = data.get('''''') # js 의 key 이름 삽입할 것!
     
-    # fingerPrint = # 연결된 지문 인식 센서로부터 정보를 받아오는 코드
+    fingerPrint = 1 # 연결된 지문 인식 센서로부터 정보를 받아오는 코드
     
     if fingerPrint or name is not None:
         result = ddbb.helloNew(name, fingerPrint)
