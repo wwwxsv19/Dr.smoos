@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자로 등록되어 있을 때 랜더링되는 페이지</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            text-decoration: none;
+        }
+
+        @font-face {
+            font-family: 'ImcreSoojin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #ECF2FB;
+            font-family: 'ImcreSoojin';
+        }
+
+        .header {
+            padding: 1% 0 1% 1%;
+            background-color: #FBFBFD;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            color: #4A88DB;
+            font-size: 2.5em;
+        }
+
+        .back--img {
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            margin: 0 1% 0 auto;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 7%;
+        }
+
+        .box {
+            background-color: #FBFBFD;
+            width: 15%;
+            padding: 2% 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 50px;
+            gap: 2rem;
+        }
+
+        img {
+            width: 130px;
+            height: 130px;
+        }
+
+        .textbox {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        #user--name {
+            color: #4A88DB;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">Dr.smoos</div>
+        <img src="images/back.png" class="back--img" onclick="location.href='index.html'" />
+    </div>
+    <div class="main">
+        <div class="box">
+            <img src="images/thumb.png" />
+            <div class="textbox">
+                <div class="user--information">
+                    <div id="user--name"></div>
+                    <div>사용자님</div>
+                </div>
+                <div>문이 열렸습니다 :)</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
