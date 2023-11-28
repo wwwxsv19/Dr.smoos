@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D.smoos</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            text-decoration: none;
+        }
+
         @font-face {
             font-family: 'ImcreSoojin';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
@@ -101,7 +109,7 @@
                 <img src="images/registration.png" class="main--img1" />
                 <div class="subtitle">지문을 등록해 보세요!</div>
             </div>
-            <button class="title">사용자 등록</button>
+            <button class="title" onclick="location.href='user_registration.html'">사용자 등록</button>
         </div>
         <div class="main--box">
             <div class="box">
@@ -119,7 +127,7 @@
                     <p>지문을 인식했던 기록을</p>볼 수 있습니다 :)
                 </div>
             </div>
-            <button class="title">인식 기록</button>
+            <button class="title" onclick="location.href='record.html'">인식 기록</button>
         </div>
     </div>
 </body>
