@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.smoos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            text-decoration: none;
+        }
+
+        @font-face {
+            font-family: 'ImcreSoojin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #ECF2FB;
+            font-family: 'ImcreSoojin';
+        }
+
+        .header {
+            padding: 1% 0 1% 1%;
+            background-color: #FBFBFD;
+            align-items: center;
+        }
+
+        .logo {
+            color: #4A88DB;
+            font-size: 2.5em;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 7%;
+            gap: 3%;
+        }
+
+        .main--box {
+            display: flex;
+            flex-direction: column;
+            width: 19%;
+            gap: 20px;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #FBFBFD;
+            padding: 10% 0 10% 0;
+            border-radius: 50px;
+            width: 100%;
+            height: 80%;
+            gap: 20px;
+        }
+
+        .main--img1 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .main--img2 {
+            width: 180px;
+            height: 180px;
+        }
+
+        .subtitle {
+            font-size: larger;
+            color: #89B2E9;
+            text-align: center;
+        }
+
+        .title {
+            padding: 15px;
+            width: 100%;
+            border: none;
+            font-size: larger;
+            font-family: 'ImcreSoojin';
+            border-radius: 10px;
+            background-color: #89B2E9;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        p {
+            line-height: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">Dr.smoos</div>
+    </div>
+    <div class="main">
+        <div class="main--box">
+            <div class="box">
+                <img src="images/registration.png" class="main--img1" />
+                <div class="subtitle">지문을 등록해 보세요!</div>
+            </div>
+            <button class="title" onclick="location.href='user_registration.html'">사용자 등록</button>
+        </div>
+        <div class="main--box">
+            <div class="box">
+                <img src="images/key.png" class="main--img2" />
+                <div class="subtitle">
+                    <p>등록된 사용자만 문을</p>열 수 있습니다~
+                </div>
+            </div>
+            <button class="title">문 열기</button>
+        </div>
+        <div class="main--box">
+            <div class="box">
+                <img src="images/record.png" class="main--img2" />
+                <div class="subtitle">
+                    <p>지문을 인식했던 기록을</p>볼 수 있습니다 :)
+                </div>
+            </div>
+            <button class="title" onclick="location.href='record.html'">인식 기록</button>
+        </div>
+    </div>
+</body>
+
+</html>
