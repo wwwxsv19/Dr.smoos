@@ -71,15 +71,22 @@
         table {
             width: 100%;
             text-align: center;
+            align-items: center;
+            justify-content: center;
         }
 
-        thead {
-            gap: 10px;
-        }
+        thead {}
 
-        td {
+        .td {
+            width: 33%;
             color: #4A88DB;
             font-size: 1.5rem;
+            text-align: center;
+        }
+
+        #record--main {
+            color: #4A88DB;
+            font-size: 1.3rem;
         }
     </style>
 </head>
@@ -94,9 +101,9 @@
         <div class="record--box">
             <table>
                 <thead>
-                    <td>날짜</td>
-                    <td>지문정보</td>
-                    <td>이름</td>
+                    <td class="td">날짜</td>
+                    <td class="td">지문정보</td>
+                    <td class="td">이름</td>
                 </thead>
                 <tbody id="record--main"></tbody>
             </table>
