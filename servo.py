@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-import time
 
 servoPin = 16
 melody = [262, 330, 392, 525]
@@ -15,7 +14,6 @@ class Servo:
     def setAngle(self, angle):
         duty = 2.5 + 10 * angle / 180
         self.servo.ChangeDutyCycle(duty)
-        GPIO.cleanup()
 
     def control_servo(self, angle):
         if angle is not None:
