@@ -20,6 +20,19 @@ class connectDB:
         self.cur.execute(sql)
         result = self.cur.fetchall()
         if result is not None:
+            sql2 = "insert into recordDB(openName, fingerPrint) values('{0}', '{1}')".format(openName, fingerPrint)
+            self.cur.execute(sql2)
+            self.db.commit()
             return True
         else:
+            sql2 = "insert into recordDB(openName, fingerPrint) values('{0}', '{1}')".format(openName, fingerPrint)
+            self.cur.execute(sql2)
+            self.db.commit()
             return False
+        
+    # 인식 기록 전부 불러오기
+    def selectAll(self):
+        sql = "select * from recordDB"
+        self.cur.execute(sql)
+        result = self.cur.fetchall()
+        return result
