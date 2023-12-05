@@ -23,7 +23,7 @@ $(document).ready(function () {
         isUserRegistered = response.isRegistered; // 서버에서 'isRegistered' 키로 JSON을 받는다고 가정합니다.
         redirectToPage(); // API 호출이 완료된 후에 리디렉션 함수를 호출합니다.
       },
-      error: function (xhr, status, error) {
+      error: function (error) {
         console.error("사용자 등록 확인 중 오류가 발생했습니다.", error);
         window.location.href = "error.html";
       },
