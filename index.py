@@ -7,18 +7,17 @@ ddbb = connectDB.connectDB()
 bz = buzzer.Buzzer()
 sv = servo.Servo()
 
-
 @app.route("/")
 def home():
     return render_template("index.html")
-
 
 @app.route("/signUp", methods=["POST"])
 def signUpInfor():
     data = request.get_json()
     name = data.get("key")  # js 의 key 이름 삽입할 것!
 
-    fingerPrint = 1  # 연결된 지문 인식 센서로부터 정보를 받아오는 코드
+    fingerPrint = 1 
+    # 연결된 지문 인식 센서로부터 정보를 받아오는 코드
 
     if fingerPrint or name is not None:
         result = ddbb.helloNew(name, fingerPrint)
@@ -32,9 +31,10 @@ def takeInfor():
     data = request.get_json()
     name = data.get("key")  # js 의 key 이름 삽입할 것!
 
-    # fingerPrint = # 연결된 지문 인식 센서로부터 정보를 받아오는 코드
+    fingerPrint = 1
+    # 연결된 지문 인식 센서로부터 정보를 받아오는 코드
 
-    if ddbb.whoAreYou(fingerPrint):
+    if ddbb.whoAreYou(name, fingerPrint):
         bz.Welcome()
         sv.control_servo(90)
         time.sleep(2000)
@@ -44,6 +44,5 @@ def takeInfor():
         bz.Emergency
         return jsonify({"msg": "미등록 사용자 출입 시도 감지"})
 
-
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host = "0.0.0.0")

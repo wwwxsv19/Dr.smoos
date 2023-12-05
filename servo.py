@@ -5,7 +5,6 @@ melody = [262, 330, 392, 525]
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(servoPin, GPIO.OUT)
-
 class Servo:
     def __init__(self):
         self.pin = servoPin
