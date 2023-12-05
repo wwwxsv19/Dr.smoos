@@ -1,21 +1,35 @@
-$(document).ready(function () {
-  $("#name--input").click(function () {
-    let name = $("#name--input").val(); // input 요소에서 key 값을 가져옵니다.
+// 사용자가 등록되어 있는지 확인하는 변수 'isUserRegistered'를 가정합니다.
+// 실제 변수나 메소드로 대체해야 합니다.
+let isUserRegistered = true;
 
+// 서버 응답에 따라 적절한 페이지로 리디렉션하는 함수
+function redirectToPage() {
+  if (isUserRegistered) {
+    window.location.href = "registered_user.html";
+  } else {
+    window.location.href = "registration_user_no.html";
+  }
+}
+
+// opendoorbtn 버튼에 클릭 이벤트 리스너를 추가합니다.
+$(document).ready(function () {
+  $("#opendoorbtn").on("click", function () {
+    // 버튼이 클릭되었을 때 실행될 코드를 작성합니다.
+    // 예시: 가짜 API 호출
     $.ajax({
-      url: "index.py", // index.py 파일의 경로를 입력해주세요.
-      method: "POST", // POST 방식으로 요청을 보냅니다.
-      data: { key: name }, // key 값을 서버로 전송합니다.
+      url: "/api/checkUserRegistration", // 엔드포인트 URL을 업데이트하세요.
+      method: "GET",
       success: function (response) {
-        // 서버로부터 성공적으로 응답을 받았을 때 실행될 코드를 작성해주세요.
-        alert("등록 완료!");
-        console.log(response);
+        isUserRegistered = response.isRegistered; // 서버에서 'isRegistered' 키로 JSON을 받는다고 가정합니다.
+        redirectToPage(); // API 호출이 완료된 후에 리디렉션 함수를 호출합니다.
       },
-      error: function (error) {
-        // 서버와의 통신 중 에러가 발생했을 때 실행될 코드를 작성해주세요.
-        window.location.href = "error.html"; // 에러가 발생했을 때 error.html 페이지로 이동합니다.
-        console.log(error);
+      error: function (xhr, status, error) {
+        console.error("사용자 등록 확인 중 오류가 발생했습니다.", error);
+        window.location.href = "error.html";
       },
     });
   });
+
+  // opendoorbtn 버튼이 클릭되었을 때 실행될 코드를 추가합니다.
+  $("#opendoorbtn").trigger("click");
 });
