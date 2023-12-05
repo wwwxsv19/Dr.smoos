@@ -1,22 +1,19 @@
 $(document).ready(function () {
-  // 등록 버튼 클릭 이벤트 핸들러
-  $("#rebtn").click(function () {
-    // 입력한 이름 값 가져오기
-    var name = $(".name--input").val();
+  $("#name--input").click(function () {
+    let name = $("#name--input").val(); // input 요소에서 key 값을 가져옵니다.
 
-    // Ajax 요청 생성
     $.ajax({
-      url: "/register", // '/register' 경로로 요청
-      type: "POST", // POST 방식으로 요청
-      data: JSON.stringify({ name: name }), // 요청 데이터 설정
-      contentType: "application/json", // 요청 헤더 설정
+      url: "/signUp", // index.py 파일의 경로를 입력해주세요.
+      method: "POST", // POST 방식으로 요청을 보냅니다.
+      data: { key: name }, // key 값을 서버로 전송합니다.
       success: function (response) {
-        // 요청이 성공적으로 완료되면 처리할 코드 작성
-        console.log("이름 등록이 완료되었습니다.");
+        // 서버로부터 성공적으로 응답을 받았을 때 실행될 코드를 작성해주세요.
+        alert("등록 완료!");
+        console.log(response);
       },
-      error: function (xhr, status, error) {
-        // 요청이 실패했을 때 처리할 코드 작성
-        console.log("이름 등록에 실패했습니다.");
+      error: function (error) {
+        // 서버와의 통신 중 에러가 발생했을 때 실행될 코드를 작성해주세요.
+        window.location.href = "error.html"; // 에러가 발생했을 때 error.html 페이지로 이동합니다.
         console.log(error);
       },
     });
