@@ -17,7 +17,7 @@ $(document).ready(function () {
     // 버튼이 클릭되었을 때 실행될 코드를 작성합니다.
     // 예시: 가짜 API 호출
     $.ajax({
-      url: "/api/checkUserRegistration", // 엔드포인트 URL을 업데이트하세요.
+      url: "/openTheDoor", // 엔드포인트 URL을 업데이트하세요.
       method: "GET",
       success: function (response) {
         isUserRegistered = response.isRegistered; // 서버에서 'isRegistered' 키로 JSON을 받는다고 가정합니다.
