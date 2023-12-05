@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-servoPin = 16
+servoPin = 18
 melody = [262, 330, 392, 525]
 
 GPIO.setmode(GPIO.BOARD)
